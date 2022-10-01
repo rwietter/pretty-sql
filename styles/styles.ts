@@ -9,7 +9,6 @@ export const Center = styled("div", {
   justifyContent: "center",
   width: "100%",
   padding: "2rem 1rem 3rem 1rem",
-  height: "100vh",
   fontWeight: 300,
   WebkitFontSmoothing: "auto",
   background: "hsl(200deg 7% 9%)",
@@ -23,7 +22,7 @@ export const Center = styled("div", {
     top: 0,
     left: 0,
     width: "100%",
-    height: "100%",
+    height: "100vh",
     background:
       "radial-gradient(circle at 15% 50%, hsl(252 40.1% 22.5%), rgba(255, 255, 255, 0) 25%), radial-gradient(circle at 85% 30%, hsl(192 79.3% 12.8%), rgba(255, 255, 255, 0) 25%)",
   },
@@ -54,6 +53,8 @@ export const Header = styled("header", {
   alignItems: "center",
   justifyContent: "center",
   color: "#fff",
+  position: "relative",
+  zIndex: 4,
 
   h1: {
     fontSize: "2.5rem",
