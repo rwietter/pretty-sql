@@ -14,15 +14,21 @@ export const Center = styled("div", {
   background: "hsl(200deg 7% 9%)",
   position: "relative",
   zIndex: 1,
-
+  top: 0,
+  left: 0,
+  bottom: 0,
+  right: 0,
+  overflowX: "hidden",
+  height: "100vh",
   "&::after": {
     content: "''",
     position: "absolute",
     zIndex: 1,
     top: 0,
     left: 0,
-    width: "100%",
+    bottom: 0,
     height: "100vh",
+    width: "100%",
     background:
       "radial-gradient(circle at 15% 50%, hsl(252 40.1% 22.5%), rgba(255, 255, 255, 0) 25%), radial-gradient(circle at 85% 30%, hsl(192 79.3% 12.8%), rgba(255, 255, 255, 0) 25%)",
   },
@@ -38,12 +44,6 @@ export const Main = styled("main", {
   width: "100%",
   position: "relative",
   zIndex: 2,
-});
-
-export const paragraphStyles = css({
-  fontFeatureSettings: '"ss02" 1',
-  letterSpacing: "-.05em",
-  fontSize: "1.3rem",
 });
 
 export const Header = styled("header", {
