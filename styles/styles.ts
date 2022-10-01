@@ -8,29 +8,43 @@ export const Center = styled("div", {
   alignItems: "center",
   justifyContent: "center",
   width: "100%",
-  padding: "2rem 0 3rem 0",
-  height: "100%",
+  padding: "2rem 1rem 3rem 1rem",
+  height: "100vh",
   fontWeight: 300,
   WebkitFontSmoothing: "auto",
+  background: "hsl(200deg 7% 9%)",
+  position: "relative",
+  zIndex: 1,
 
-  background:
-    "radial-gradient(circle at 15% 50%, hsl(252 40.1% 22.5%), rgba(255, 255, 255, 0) 25%), radial-gradient(circle at 85% 30%, hsl(192 79.3% 12.8%), rgba(255, 255, 255, 0) 25%)",
+  "&::after": {
+    content: "''",
+    position: "absolute",
+    zIndex: 1,
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    background:
+      "radial-gradient(circle at 15% 50%, hsl(252 40.1% 22.5%), rgba(255, 255, 255, 0) 25%), radial-gradient(circle at 85% 30%, hsl(192 79.3% 12.8%), rgba(255, 255, 255, 0) 25%)",
+  },
 });
 
 export const Main = styled("main", {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   height: "100%",
   margin: "0 auto",
   width: "100%",
-  backgroundColor: "inherit",
+  position: "relative",
+  zIndex: 2,
 });
 
 export const paragraphStyles = css({
   fontFeatureSettings: '"ss02" 1',
   letterSpacing: "-.05em",
+  fontSize: "1.3rem",
 });
 
 export const Header = styled("header", {
@@ -39,9 +53,10 @@ export const Header = styled("header", {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
+  color: "#fff",
 
   h1: {
-    fontSize: "2rem",
+    fontSize: "2.5rem",
     margin: "0",
     padding: "0",
     letterSpacing: "-.05em",
@@ -53,31 +68,32 @@ export const Header = styled("header", {
     "-webkit-text-fill-color": "transparent",
     backgroundClip: "text",
     "@media (min-width: 420px)": {
-      fontSize: "2rem",
+      fontSize: "2.7rem",
     },
     "@media (min-width: 768px)": {
       fontSize: "3.5rem",
     },
   },
   p: {
-    fontSize: "0.8rem",
+    fontSize: "1.2rem",
     textAlign: "center",
     margin: "0",
     padding: "1.5rem 1rem",
     maxWidth: "50ch",
     "@media (min-width: 420px)": {
-      fontSize: "1rem",
+      fontSize: "1.3rem",
     },
     "@media (min-width: 768px)": {
-      fontSize: "1.3rem",
+      fontSize: "1.5rem",
     },
   },
 });
 
 export const PrettyHighlight = styled("h2", {
-  fontSize: "1.3rem",
+  fontSize: "1.7rem",
   margin: "0",
   padding: "2rem 0 0.6rem 0",
+  fontWeight: 900,
   backgroundColor: "#0fa",
   backgroundImage: "linear-gradient(135deg,#0af 15%,#0fa 93%)",
   "-webkit-background-clip": "text",
@@ -85,9 +101,8 @@ export const PrettyHighlight = styled("h2", {
 });
 
 export const Highlighter = styled(SyntaxHighlighter, {
-  width: "100%",
-  minWidth: "15rem",
-  maxWidth: "60rem",
+  width: "calc(100vw - 2rem)",
+  maxWidth: "40rem",
   display: "block",
   overflow: "hidden",
   resize: "both",
@@ -102,19 +117,11 @@ export const Highlighter = styled(SyntaxHighlighter, {
   fontSize: "inherit",
   color: "inherit",
   background: "transparent",
-
-  "@media (min-width: 420px)": {
-    minWidth: "20rem",
-  },
-  "@media (min-width: 720px)": {
-    minWidth: "30rem",
-  },
 });
 
 export const TextArea = styled(reactTextareaAutosize, {
-  width: "100%",
-  minWidth: "15rem",
-  maxWidth: "60rem",
+  width: "calc(100vw - 2rem)",
+  maxWidth: "40rem",
   display: "block",
   overflow: "hidden",
   resize: "both",
@@ -127,16 +134,10 @@ export const TextArea = styled(reactTextareaAutosize, {
   margin: "0",
   fontFamily: "inherit",
   fontSize: "inherit",
-  color: "inherit",
+  color: "#fff",
   background: "#282A36",
 
   "&:last-child": {
     marginTop: "2rem",
-  },
-  "@media (min-width: 420px)": {
-    minWidth: "20rem",
-  },
-  "@media (min-width: 720px)": {
-    minWidth: "30rem",
   },
 });
