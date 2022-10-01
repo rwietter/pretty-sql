@@ -9,21 +9,26 @@ export const Center = styled("div", {
   justifyContent: "center",
   width: "100%",
   padding: "2rem 1rem 3rem 1rem",
-  height: "100vh",
   fontWeight: 300,
   WebkitFontSmoothing: "auto",
   background: "hsl(200deg 7% 9%)",
   position: "relative",
   zIndex: 1,
-
+  top: 0,
+  left: 0,
+  bottom: 0,
+  right: 0,
+  overflowX: "hidden",
+  height: "100vh",
   "&::after": {
     content: "''",
     position: "absolute",
     zIndex: 1,
     top: 0,
     left: 0,
+    bottom: 0,
+    height: "100vh",
     width: "100%",
-    height: "100%",
     background:
       "radial-gradient(circle at 15% 50%, hsl(252 40.1% 22.5%), rgba(255, 255, 255, 0) 25%), radial-gradient(circle at 85% 30%, hsl(192 79.3% 12.8%), rgba(255, 255, 255, 0) 25%)",
   },
@@ -41,12 +46,6 @@ export const Main = styled("main", {
   zIndex: 2,
 });
 
-export const paragraphStyles = css({
-  fontFeatureSettings: '"ss02" 1',
-  letterSpacing: "-.05em",
-  fontSize: "1.3rem",
-});
-
 export const Header = styled("header", {
   padding: "1rem 0.5rem 0 0.5rem",
   display: "flex",
@@ -54,6 +53,8 @@ export const Header = styled("header", {
   alignItems: "center",
   justifyContent: "center",
   color: "#fff",
+  position: "relative",
+  zIndex: 4,
 
   h1: {
     fontSize: "2.5rem",
