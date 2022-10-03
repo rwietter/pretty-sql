@@ -1,37 +1,22 @@
-import { css, styled } from "@stitches/react";
+import { keyframes, styled } from "@stitches/react";
 import reactTextareaAutosize from "react-textarea-autosize";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 
-export const Center = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  width: "100%",
-  padding: "2rem 1rem 3rem 1rem",
-  fontWeight: 300,
-  WebkitFontSmoothing: "auto",
-  background: "hsl(200deg 7% 9%)",
-  position: "relative",
-  zIndex: 1,
+export const Gradient = styled("div", {
   top: 0,
-  left: 0,
-  bottom: 0,
   right: 0,
-  overflowX: "hidden",
+  bottom: 0,
+  left: 0,
+  position: "absolute",
+  zIndex: 1,
+  background:
+    "radial-gradient(circle at 15% 50%, hsl(252 40.1% 22.5%), rgba(255, 255, 255, 0) 25%), radial-gradient(circle at 85% 30%, hsl(192 79.3% 12.8%), rgba(255, 255, 255, 0) 25%)",
+});
+
+export const Container = styled("div", {
+  position: "relative",
   height: "100vh",
-  "&::after": {
-    content: "''",
-    position: "absolute",
-    zIndex: 1,
-    top: 0,
-    left: 0,
-    bottom: 0,
-    height: "100vh",
-    width: "100%",
-    background:
-      "radial-gradient(circle at 15% 50%, hsl(252 40.1% 22.5%), rgba(255, 255, 255, 0) 25%), radial-gradient(circle at 85% 30%, hsl(192 79.3% 12.8%), rgba(255, 255, 255, 0) 25%)",
-  },
+  padding: "1rem",
 });
 
 export const Main = styled("main", {
@@ -90,15 +75,8 @@ export const Header = styled("header", {
   },
 });
 
-export const PrettyHighlight = styled("h2", {
-  fontSize: "1.7rem",
-  margin: "0",
-  padding: "2rem 0 0.6rem 0",
-  fontWeight: 900,
-  backgroundColor: "#0fa",
-  backgroundImage: "linear-gradient(135deg,#0af 15%,#0fa 93%)",
-  "-webkit-background-clip": "text",
-  "-webkit-text-fill-color": "transparent",
+export const HighlighterBackground = styled("div", {
+  paddingBottom: "4rem",
 });
 
 export const Highlighter = styled(SyntaxHighlighter, {
@@ -140,5 +118,74 @@ export const TextArea = styled(reactTextareaAutosize, {
 
   "&:last-child": {
     marginTop: "2rem",
+  },
+});
+
+const gradientAnimation = keyframes({
+  "50%": {
+    backgroundPosition: "140% 50%",
+    transform: "skew(-2deg)",
+  },
+});
+
+export const CopyButtonContainer = styled("div", {
+  fontSize: "1.7rem",
+  margin: "0",
+  padding: "2rem 0 0.6rem 0",
+  color: "#fff",
+});
+
+export const CopyButton = styled("button", {
+  position: "relative",
+  padding: "1rem 0 0 0",
+  border: "none",
+  borderRadius: "0.3rem",
+  fontSize: "1rem",
+  fontWeight: 700,
+  background: "transparent",
+  cursor: "pointer",
+  width: "10rem",
+  height: "2.8rem",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  margin: "0 auto",
+  marginTop: "1.5rem",
+});
+
+export const CopyButtonGradient = styled("div", {
+  position: "absolute",
+  top: "1px",
+  right: "1px",
+  bottom: "1px",
+  left: "1px",
+  borderRadius: "2rem",
+
+  background: "linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0)",
+  backgroundSize: "400% 100%",
+  border: "none",
+  padding: "0",
+  margin: "0",
+  WebkitAnimation: `${gradientAnimation} 8s ease-in-out infinite`,
+  animation: `${gradientAnimation} 8s ease-in-out infinite`,
+});
+
+export const CopyButtonContent = styled("div", {
+  position: "absolute",
+  top: "4px",
+  right: "4px",
+
+  bottom: "4px",
+  left: "4px",
+  background: "black",
+  color: "#fff",
+  borderRadius: "2rem",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  transition: "background 0.3s ease-in-out",
+
+  "&:hover": {
+    background: "hsl(200deg 7% 9%)",
   },
 });
