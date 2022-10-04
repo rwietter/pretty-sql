@@ -6,11 +6,11 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-    overflow-x: hidden;
+  overflow-x: hidden;
   font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1;
   -webkit-font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1;
   -moz-font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1;
-    -ms-font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1;
+  -ms-font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1;
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1;
 }
 body::after {
@@ -33,7 +33,7 @@ a {
 
 .Toastify__toast-body {
   background: rgb(40, 43, 46) !important;
-  color: #fff
+  color: #fff;
 }
 @supports (font-variation-settings: normal) {
   html {
@@ -67,15 +67,4 @@ html {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  body {
-    color: white;
-    background: black;
-  }
 }
