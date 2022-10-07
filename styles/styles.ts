@@ -128,11 +128,32 @@ const gradientAnimation = keyframes({
   },
 });
 
+export const ButtonWrapper = styled("div", {
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  width: "100%",
+  maxWidth: "39.5rem",
+  justifyContent: "space-between",
+  marginTop: "1.5rem",
+
+  "@media (max-width: 420px)": {
+    flexDirection: "column",
+  },
+});
+
 export const CopyButtonContainer = styled("div", {
   fontSize: "1.7rem",
   margin: "0",
   padding: "2rem 0 0.6rem 0",
   color: "#fff",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+
+  "@media (max-width: 420px)": {
+    padding: "0.5rem 0",
+  },
 });
 
 export const CopyButton = styled("button", {
@@ -150,7 +171,11 @@ export const CopyButton = styled("button", {
   alignItems: "center",
   justifyContent: "center",
   margin: "0 auto",
-  marginTop: "1.5rem",
+  "@media (max-width: 420px)": {
+    "&[data-type='Download']": {
+      marginTop: "0",
+    },
+  },
 });
 
 export const CopyButtonGradient = styled("div", {

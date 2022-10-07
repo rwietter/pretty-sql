@@ -8,15 +8,16 @@ import {
 } from "../../styles/styles";
 
 type Props = {
-  handleCopy: () => void;
+  handle: () => void;
+  title: string;
 };
 
-const Button: React.FC<Props> = ({ handleCopy }) => {
+const Button: React.FC<Props> = ({ handle, title = "" }) => {
   return (
     <CopyButtonContainer>
-      <CopyButton onClick={handleCopy}>
+      <CopyButton onClick={handle} data-type={title}>
         <CopyButtonGradient className="gradient-animation"></CopyButtonGradient>
-        <CopyButtonContent className="content">Copy</CopyButtonContent>
+        <CopyButtonContent className="content">{ title }</CopyButtonContent>
       </CopyButton>
     </CopyButtonContainer>
   );
